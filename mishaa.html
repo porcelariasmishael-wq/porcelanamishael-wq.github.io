@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Supermercado Gutiérrez</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: orangered; /* Fondo naranjarojo */
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      background: #ff3045;
+      color: yellow;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #search-bar {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    #search-input {
+      padding: 10px;
+      width: 60%;
+      font-size: 16px;
+      background-color: white ; /* Fondo blanco */
+      color: light yellowgreen; /* Texto amarilloverde */
+      border: 1px solid #999;
+      border-radius: 5px;
+    }
+
+    .catalogo {
+      margin-top: 30px;
+    }
+
+    .categoria {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      color: #2c3e50;
+    }
+
+    .producto {
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+      padding: 10px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .producto h3 {
+      margin: 5px 0;
+      color: black; /* Color del texto del producto negro */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Supermercado Gutiérrez</h1>
+    <p>Bienvenido a tu tienda en línea</p>
+  </header>
+
+  <div id="search-bar">
+    <input type="text" id="search-input" placeholder="Buscar producto...">
+  </div>
+
+  <div class="catalogo" id="catalogo">
+
+    <div class="categoria" data-categoria="Frutas y Verduras">
+      <h2>Frutas y Verduras</h2>
+      <div class="producto"><h3>Manzanas</h3></div>
+      <div class="producto"><h3>Plátanos</h3></div>
+      <div class="producto"><h3>Lechuga</h3></div>
+    </div>
+
+    <div class="categoria" data-categoria="Lácteos">
+      <h2>Lácteos</h2>
+      <div class="producto"><h3>Leche</h3></div>
+      <div class="producto"><h3>Yogurt</h3></div>
+      <div class="producto"><h3>Queso</h3></div>
+    </div>
+
+    <div class="categoria" data-categoria="Carnes">
+      <h2>Carnes</h2>
+      <div class="producto"><h3>Pollo</h3></div>
+      <div class="producto"><h3>Res</h3></div>
+      <div class="producto"><h3>Cerdo</h3></div>
+    </div>
+
+    <div class="categoria" data-categoria="Bebidas">
+      <h2>Bebidas</h2>
+      <div class="producto"><h3>Agua</h3></div>
+      <div class="producto"><h3>Jugo</h3></div>
+      <div class="producto"><h3>Refresco</h3></div>
+    </div>
+
+    <div class="categoria" data-categoria="Aseo">
+      <h2>Aseo</h2>
+      <div class="producto"><h3>Jabón</h3></div>
+      <div class="producto"><h3>Shampoo</h3></div>
+      <div class="producto"><h3>Papel Higiénico</h3></div>
+    </div>
+
+    <div class="categoria" data-categoria="Panadería">
+      <h2>Panadería</h2>
+      <div class="producto"><h3>Pan</h3></div>
+      <div class="producto"><h3>Bollos</h3></div>
+      <div class="producto"><h3>Galletas</h3></div>
+    </div>
+
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const productos = document.querySelectorAll('.producto');
+
+    searchInput.addEventListener('input', () => {
+      const filtro = searchInput.value.toLowerCase();
+
+      productos.forEach(prod => {
+        const nombre = prod.textContent.toLowerCase();
+        prod.style.display = nombre.includes(filtro) ? 'inline-block' : 'none';
+      });
+    });
+  </script>
+
+</body><iframe width="1920" height="1080" src="//ok.ru/videoembed/9505327292041?nochat=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+</html>
